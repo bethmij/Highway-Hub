@@ -10,6 +10,6 @@ public class TicketController {
 
     @GetMapping
     public String getMethod(){
-        return "request received";
+        return " Ticket Controller request received";
     }
 }
