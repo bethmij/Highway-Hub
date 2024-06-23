@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+
+import java.sql.Time;
 import java.util.UUID;
 
 import java.sql.Date;
@@ -19,9 +21,8 @@ import java.sql.Date;
 public class TicketEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "ticket_num")
-    private UUID ticketNum;
+    @Column(name = "ticket_num", columnDefinition = "varchar(36)")
+    private String ticketNum;
 
     @Column(name = "user_nic", nullable = false)
     private String userNIC;
@@ -40,9 +41,9 @@ public class TicketEntity {
     private String exitPoint;
 
     @Column(name = "departure_time")
-    private Date departureTime;
+    private Time departureTime;
 
     @Column(name = "arrival_time")
-    private Date arrivalTime;
+    private Time arrivalTime;
 
 }
