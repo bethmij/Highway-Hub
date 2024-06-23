@@ -33,7 +33,7 @@ public class UserEntity {
     @Column(name = "name", nullable = false)
     private String userName;
 
-    private Long address;
+    private String address;
 
     @Column(name = "contact_number" , length = 10 , nullable = false)
     private int contactNumber;
