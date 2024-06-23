@@ -31,7 +31,12 @@ public class UserController {
         return userService.getUserById(userId);
     }
 
-    @PostMapping()
+    @GetMapping(path = "isExit/{userId}")
+    public Boolean isUserExit(@PathVariable("userId") String userId){
+        return userService.isUserExit(userId);
+    }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO saveUser(@RequestBody UserDTO userDTO){
         System.out.println(userDTO);

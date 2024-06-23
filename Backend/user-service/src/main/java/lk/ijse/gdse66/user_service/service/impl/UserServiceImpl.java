@@ -35,6 +35,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Boolean isUserExit(String userId) {
+        return userRepo.existsById(userId);
+    }
+
+    @Override
     public UserDTO getUserById(String userId) {
 
         if (!userRepo.existsById(userId)) {
