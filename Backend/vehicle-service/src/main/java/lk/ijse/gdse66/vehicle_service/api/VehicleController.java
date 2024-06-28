@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.vehicle_service.api;
 
+import jakarta.validation.Valid;
 import jakarta.ws.rs.core.MediaType;
 import lk.ijse.gdse66.vehicle_service.dto.VehicleDTO;
 import lk.ijse.gdse66.vehicle_service.service.VehicleService;
@@ -33,13 +34,13 @@ public class VehicleController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
     @ResponseStatus(HttpStatus.CREATED)
-    public VehicleDTO saveVehicle(@RequestBody VehicleDTO vehicleDTO){
+    public VehicleDTO saveVehicle(@Valid @RequestBody VehicleDTO vehicleDTO){
         return vehicleService.saveVehicle(vehicleDTO);
     }
 
     @PatchMapping(consumes = MediaType.APPLICATION_JSON)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateVehicle(@RequestBody VehicleDTO vehicleDTO){
+    public void updateVehicle(@Valid @RequestBody VehicleDTO vehicleDTO){
         vehicleService.updateVehicle(vehicleDTO);
     }
 
