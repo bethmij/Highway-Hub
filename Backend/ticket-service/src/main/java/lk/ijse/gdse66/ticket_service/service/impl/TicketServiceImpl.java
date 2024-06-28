@@ -52,6 +52,11 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
+    public Boolean isTicketExit(String ticketId) {
+        return ticketRepo.existsById(ticketId);
+    }
+
+    @Override
     public TicketDTO saveTicket(TicketDTO ticketDTO) {
 
         if (ticketRepo.existsById(String.valueOf(ticketDTO.getTicketNum()))) {
@@ -72,7 +77,7 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public void updateTicket(TicketDTO ticketDTO) {
-        if (!ticketRepo.existsById(String.valueOf(ticketDTO.getTicketNum()))) {
+        if (!ticketRepo.existsById(ticketDTO.getTicketNum())) {
             throw new NotFoundException("Ticket id : " + ticketDTO.getTicketNum() + " doesn't exist");
         }
 

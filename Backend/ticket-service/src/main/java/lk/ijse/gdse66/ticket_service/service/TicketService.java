@@ -10,6 +10,8 @@ public interface TicketService {
 
     TicketDTO getTicketById(String ticketId);
 
+    Boolean isTicketExit(String ticketId);
+
     TicketDTO saveTicket (TicketDTO ticketDTO);
 
     void updateTicket(TicketDTO ticketDTO);
