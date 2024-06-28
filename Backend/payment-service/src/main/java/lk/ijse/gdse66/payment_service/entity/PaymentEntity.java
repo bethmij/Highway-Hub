@@ -19,12 +19,12 @@ import java.util.UUID;
 public class PaymentEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "payment_id")
-    private UUID paymentId;
+    @Column(name = "payment_id", columnDefinition = "varchar(36)")
+    private String paymentId;
 
     @CollectionTable(name = "payment_service", joinColumns = @JoinColumn(name = "ticket_num"))
-    private UUID ticket_num;
+    @Column(unique = true, name = "ticket_num")
+    private String ticketNum;
 
     private double amount;
 
@@ -34,7 +34,5 @@ public class PaymentEntity {
 
     @Column(name = "type")
     private String paymentType;
-
-
 
 }
