@@ -1,0 +1,514 @@
+{
+	"info": {
+		"_postman_id": "127580c2-5245-4f93-b187-07cb07e31a0f",
+		"name": "Highway-Hub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28142577"
+	},
+	"item": [
+		{
+			"name": "user-service",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user-service/user/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//      \"userNIC\":\"200365101249\",\n//      \"userName\":\"Kamal Perera\",\n//      \"address\":\"new Rd, Colombo\",\n//      \"contactNumber\":\"0786788345\",\n//      \"email\":\"kamal@gmail.com\"\n// }\n{\n     \"userNIC\":\"200965101899\",\n     \"userName\":\"Amal Dias\",\n     \"address\":\"No.23 Galle\",\n     \"contactNumber\":\"0776894345\",\n     \"email\":\"amal@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"userNIC\":\"200965101899\",\n     \"userName\":\"Amal Hapugoda\",\n     \"address\":\"No.23 Galle\",\n     \"contactNumber\":\"0776894345\",\n     \"email\":\"amal@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user-service/user/200965101899",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user",
+								"200965101899"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user-service/user/200965101899",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user",
+								"200965101899"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vehicle-service",
+			"item": [
+				{
+					"name": "getAllVehicle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/vehicle/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"vehicle",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveVehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    // {\n    //     \"vehicleId\": \"AF-4780\",\n    //     \"userNIC\": \"200365101249\",\n    //     \"carType\": \"van\"\n    // }\n\n    // {\n    //     \"vehicleId\": \"BS-3223\",\n    //     \"userNIC\": \"200965101899\",\n    //     \"carType\": \"car\"\n    // }\n    \n    {\n        \"vehicleId\": \"BS-3223r\",\n        \"userNIC\": \"200965101899\",\n        \"carType\": \"jeep\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVehicle",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"vehicleId\": \"BS-3223r\",\n    \"userNIC\": \"200965101899\",\n    \"carType\": \"jeep\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteVehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/vehicle/BS-3223r",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"vehicle",
+								"BS-3223r"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/vehicle/BS-3223r",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"vehicle",
+								"BS-3223r"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ticket-service",
+			"item": [
+				{
+					"name": "getAllTicket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ticket-service/ticket/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-service",
+								"ticket",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveTicket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//     \"userNIC\": \"200965101899\",\n//     \"totalPrice\":\"400\",\n//     \"entrancePoint\":\"Pinnaduwa\",\n//     \"exitPoint\":\"Colombo\",\n//     \"departureTime\":\"08:00:00\",\n//     \"arrivalTime\":\"09:34:00\"\n// }\n\n{\n        \"ticketNum\": \"f292c91b-ec28-4035-afd6-62bc5e7f2484\",\n        \"userNIC\": \"200965101899\",\n        \"totalPrice\": 400.0,\n        \"entrancePoint\": \"Mathara\",\n        \"exitPoint\": \"Hambanthota\",\n        \"departureTime\": \"10:00:00\",\n        \"arrivalTime\": \"12:34:00\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ticket-service/ticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-service",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTicket",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ticketNum\":\"f292c91b-ec28-4035-afd6-62bc5e7f2484\",\n    \"userNIC\": \"200965101899\",\n    \"totalPrice\":\"400\",\n    \"entrancePoint\":\"Mathara\",\n    \"exitPoint\":\"Hambanthota\",\n    \"departureTime\":\"10:00:00\",\n    \"arrivalTime\":\"12:34:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ticket-service/ticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-service",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTicket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ticket-service/ticket/f292c91b-ec28-4035-afd6-62bc5e7f2484",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-service",
+								"ticket",
+								"f292c91b-ec28-4035-afd6-62bc5e7f2484"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ticket-service/ticket/f292c91b-ec28-4035-afd6-62bc5e7f2484",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-service",
+								"ticket",
+								"f292c91b-ec28-4035-afd6-62bc5e7f2484"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment-service",
+			"item": [
+				{
+					"name": "getAllPayment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/vehicle/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"vehicle",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savePayment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//      \"userNIC\":\"200365101249\",\n//      \"userName\":\"Kamal Perera\",\n//      \"address\":\"new Rd, Colombo\",\n//      \"contactNumber\":\"0786788345\",\n//      \"email\":\"kamal@gmail.com\"\n// }\n{\n     \"userNIC\":\"200965101899\",\n     \"userName\":\"Amal Dias\",\n     \"address\":\"No.23 Galle\",\n     \"contactNumber\":\"0776894345\",\n     \"email\":\"amal@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePayment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"userNIC\":\"200965101899\",\n     \"userName\":\"Amal Hapugoda\",\n     \"address\":\"No.23 Galle\",\n     \"contactNumber\":\"0776894345\",\n     \"email\":\"amal@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePayment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user-service/user/200965101899",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user",
+								"200965101899"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user-service/user/200965101899",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"user",
+								"200965101899"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
