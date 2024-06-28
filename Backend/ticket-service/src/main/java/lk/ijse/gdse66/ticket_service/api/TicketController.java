@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.ticket_service.api;
 
+import jakarta.validation.Valid;
 import jakarta.ws.rs.core.MediaType;
 import lk.ijse.gdse66.ticket_service.dto.TicketDTO;
 import lk.ijse.gdse66.ticket_service.service.TicketService;
@@ -29,15 +30,20 @@ public class TicketController {
         return ticketService.getTicketById(ticketId);
     }
 
+    @GetMapping(path = "isExit/{ticketId}")
+    public Boolean isTicketExit(@PathVariable("ticketId") String ticketId){
+        return ticketService.isTicketExit(ticketId);
+    }
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
     @ResponseStatus(HttpStatus.CREATED)
-    public TicketDTO saveTicket(@RequestBody TicketDTO ticketDTO){
+    public TicketDTO saveTicket(@Valid @RequestBody TicketDTO ticketDTO){
         return ticketService.saveTicket(ticketDTO);
     }
 
     @PatchMapping(consumes = MediaType.APPLICATION_JSON)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateTicket(@RequestBody TicketDTO ticketDTO){
+    public void updateTicket(@Valid @RequestBody TicketDTO ticketDTO){
         ticketService.updateTicket(ticketDTO);
     }
 
