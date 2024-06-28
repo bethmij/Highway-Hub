@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.user_service.api;
 
+import jakarta.validation.Valid;
 import jakarta.ws.rs.core.MediaType;
 import lk.ijse.gdse66.user_service.dto.UserDTO;
 import lk.ijse.gdse66.user_service.service.UserService;
@@ -38,14 +39,14 @@ public class UserController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDTO saveUser(@RequestBody UserDTO userDTO){
+    public UserDTO saveUser(@Valid @RequestBody UserDTO userDTO){
         System.out.println(userDTO);
         return userService.saveUser(userDTO);
     }
 
     @PatchMapping(consumes = MediaType.APPLICATION_JSON)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateUser(@RequestBody UserDTO userDTO){
+    public void updateUser(@Valid @RequestBody UserDTO userDTO){
         userService.updateUser(userDTO);
     }
 

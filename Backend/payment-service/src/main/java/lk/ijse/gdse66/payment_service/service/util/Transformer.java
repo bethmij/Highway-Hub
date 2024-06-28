@@ -1,6 +1,9 @@
 package lk.ijse.gdse66.payment_service.service.util;
 
 
+import lk.ijse.gdse66.payment_service.dto.PaymentDTO;
+import lk.ijse.gdse66.payment_service.entity.PaymentEntity;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,12 +15,12 @@ public class Transformer {
         this.mapper = mapper;
     }
 
-    public TicketDTO fromTicketEntity(TicketEntity ticketEntity) {
-        return mapper.map(ticketEntity, TicketDTO.class);
+    public PaymentDTO fromPaymentEntity(PaymentEntity paymentEntity) {
+        return mapper.map(paymentEntity, PaymentDTO.class);
     }
 
-    public TicketEntity toTicketEntity(TicketDTO ticketDTO) {
-        return mapper.map(ticketDTO, TicketEntity.class);
+    public PaymentEntity toPaymentEntity(PaymentDTO paymentDTO) {
+        return mapper.map(paymentDTO, PaymentEntity.class);
     }
 
 
