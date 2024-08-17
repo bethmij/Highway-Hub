@@ -3,7 +3,7 @@ This project is a microservice-based backend application for a Highway Ticket Ma
 
 ## Technology Stack
 ### Core Technologies
-✅ Java | Spring Boot | Spring Cloud | Spring Cloud Gateway | Eureka | Spring Cloud Config Server
+✅ Java | Spring Boot | MySQL | Hibernate | Spring Cloud | Spring Cloud Gateway | Eureka | Spring Cloud Config Server
 
 ### Testing Tools
 ✅ Postman
